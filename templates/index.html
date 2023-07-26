@@ -1,11 +1,109 @@
-<!-- templates/index.html -->
 <!DOCTYPE html>
 <html>
 <head>
-    <title>My Flask Web App</title>
+    <title>Image Caption Generation</title>
+    <!-- Add Bootstrap CSS link -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            background: linear-gradient(135deg, #ff512f, #dd2476);
+            background-repeat: no-repeat;
+            background-size: cover;
+            color: #333;
+            font-family: "Helvetica Neue", sans-serif;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding-top: 30px;
+        }
+        .caption-box {
+            padding: 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            background-color: rgba(255, 255, 255, 0.9);
+        }
+        .generated-caption-title {
+            font-size: 20px;
+            font-weight: bold;
+            color: #fff;
+            background-color: #dd2476;
+            padding: 5px 10px;
+            border-radius: 5px;
+            text-align: center;
+        }
+        .generated-caption {
+            font-size: 20px;
+            color: #333;
+            margin-top: 15px;
+            font-style: italic;
+            text-align: center;
+        }
+        .btn-primary {
+            background-color: #fff;
+            color: #dd2476;
+            border-color: #fff;
+        }
+        .uploaded-image {
+            max-width: 100%;
+            margin-top: 20px;
+            border: 2px solid #dd2476;
+            border-radius: 5px;
+        }
+        #imageContainer {
+            margin-top: 20px;
+            text-align: center;
+        }
+        #placeholderImage {
+            max-width: 300px;
+            opacity: 0.6;
+        }
+    </style>
 </head>
 <body>
-    <h1>Hello, World!</h1>
-    <p>Welcome to my Flask web app.</p>
+    <div class="container">
+        <h1 class="text-center mb-4">Image Caption Generation</h1>
+        <form method="POST" action="/" enctype="multipart/form-data">
+            <div class="form-group">
+                <label for="image">Upload Image:</label>
+                <input type="file" class="form-control-file" name="image" accept="image/*" onchange="showImage(event)">
+            </div>
+            <div class="text-center">
+                <button type="submit" class="btn btn-primary">Generate Caption</button>
+            </div>
+        </form>
+        <div class="text-center mt-4" id="imageContainer">
+            <img class="uploaded-image" id="uploadedImage" src="{{ url_for('static', filename=uploaded_image) }}" alt="Uploaded Image" style="display: none;">
+            <img class="uploaded-image" id="placeholderImage" src="https://via.placeholder.com/300x200?text=No+Image" alt="No Image" style="display: block;">
+        </div>
+        {% if caption %}
+        <div class="caption-box mt-4">
+            <h2 class="generated-caption-title">Generated Caption:</h2>
+            <p class="generated-caption">{{ caption }}</p>
+        </div>
+        {% endif %}
+    </div>
+
+    <!-- Add Bootstrap JS scripts -->
+    <script src="https://code.jquery.com/jquery-3.6.0.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.10.2/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script>
+        function showImage(event) {
+            var uploadedImage = document.getElementById('uploadedImage');
+            var placeholderImage = document.getElementById('placeholderImage');
+
+            if (event.target.files && event.target.files[0]) {
+                uploadedImage.src = URL.createObjectURL(event.target.files[0]);
+                uploadedImage.style.display = 'block';
+                placeholderImage.style.display = 'none';
+                document.getElementById('imageContainer').style.display = 'block';
+            } else {
+                uploadedImage.style.display = 'none';
+                placeholderImage.style.display = 'block';
+                document.getElementById('imageContainer').style.display = 'none';
+            }
+        }
+    </script>
 </body>
 </html>
