@@ -122,7 +122,7 @@ def index():
         # Remove the temporary image file
         os.remove(image_path)
 
-    return render_template('index.html', caption=caption, uploaded_image=uploaded_image)
+    return render_template('index.html', caption=caption)
 
 if __name__ == '__main__':
     app.run(debug=True)
