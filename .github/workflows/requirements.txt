@@ -1,5 +1,0 @@
-flask
-pickle5
-tqdm
-tensorflow
-numpy
