@@ -1,5 +1,6 @@
 flask
 pickle5
+gunicorn
 tqdm
 tensorflow
 numpy
