@@ -1,3 +1,7 @@
+# Screenshots
+
+<img src="Screenshot.png" width="500">
+
 # Image Captioning Flask Web App
 
 This repository contains a Flask web application that utilizes an image captioning model based on the encoder-decoder architecture. The model generates captions for images provided by users through the web interface. The model uses a pre-trained VGG model to extract image features and an LSTM-based decoder to generate captions for the given images.
