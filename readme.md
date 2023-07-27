@@ -10,18 +10,15 @@ This repository contains a Flask web application that utilizes an image captioni
 git clone https://github.com/your-username/image-captioning-app.git
 cd image-captioning-app
 ```
-
-2. Download the pre-trained VGG model weights and tokenizer for the captioning model and place them in the `models` directory.
-
-3. Run the Flask web application:
+2. Run the Flask web application:
 
 ```bash
 python app.py
 ```
 
-4. Open your web browser and go to `http://localhost:5000`. The web application should now be running.
+3. Open your web browser and go to `http://localhost:5000`. The web application should now be running.
 
-5. Upload an image using the provided form. Click on the "Generate Caption" button, and the model will process the image and display the generated caption below the uploaded image.
+4. Upload an image using the provided form. Click on the "Generate Caption" button, and the model will process the image and display the generated caption below the uploaded image.
 
 # Image Captioning Model
 
