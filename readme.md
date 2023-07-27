@@ -33,7 +33,7 @@ The image captioning model used in this web application has the following archit
         Dropout Layer: To prevent overfitting, with a dropout rate of 0.4.
         Dense Layer: Reduces the dimensionality of the image features to 256 units, using the ReLU activation function.
 
-    Decoder (Sequence Feature Extraction):
+    Encoder (Sequence Feature Extraction):
         Input Layer: Takes in the tokenized captions as input, with a shape of (max_length,).
         Embedding Layer: Converts integer-encoded tokens into dense vectors of 256 dimensions. The vocab_size parameter indicates the number of unique words in the vocabulary, and mask_zero=True is used to mask zero-padded tokens during training.
         Dropout Layer: Applied to the embedded sequences with a dropout rate of 0.4.
