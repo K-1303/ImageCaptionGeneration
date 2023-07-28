@@ -2,7 +2,7 @@ from flask import Flask, render_template, request
 import os
 import pickle
 from tqdm import tqdm
-import tensorflow as tf
+import tensorflow.keras.models as tf
 from tensorflow.keras.applications.vgg16 import VGG16, preprocess_input
 from tensorflow.keras.preprocessing.image import load_img, img_to_array
 from tensorflow.keras.preprocessing.text import Tokenizer
@@ -57,7 +57,7 @@ vocab_size = len(tokenizer.word_index) + 1
 
 max_length = max(len(caption.split()) for caption in all_captions)
 
-model = tf.keras.models.load_model('best_model.h5')
+model = tf.load_model('best_model.h5')
 
 vgg_model = VGG16()
 vgg_model = Model(inputs=vgg_model.inputs, outputs=vgg_model.layers[-2].output)
