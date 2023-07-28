@@ -26,7 +26,7 @@ python app.py
 
 # Image Captioning Model
 
-The image captioning model used in this web application has the following architecture:
+The image captioning model used has the following architecture:
 
     Encoder (Image Feature Extraction):
         Input Layer: A 4096-dimensional vector representing the image features.
