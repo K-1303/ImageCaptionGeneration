@@ -1,6 +1,6 @@
 flask
 pickle5
 tqdm
-tensorflow=2.0.0
+tensorflow==2.0.0
 numpy
 gunicorn
