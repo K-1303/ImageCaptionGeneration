@@ -11,8 +11,8 @@ This repository contains a Flask web application that utilizes an image captioni
 1. Clone this repository to your local machine:
 
 ```bash
-git clone https://github.com/your-username/image-captioning-app.git
-cd image-captioning-app
+git clone https://github.com/K-1303/ImageCaptionGeneration
+cd ImageCaptionGeneration
 ```
 
 2. Install required packages:
