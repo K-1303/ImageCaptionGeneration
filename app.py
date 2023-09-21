@@ -2,7 +2,7 @@ from flask import Flask, render_template, request
 import os
 import pickle
 from tqdm import tqdm
-import tensorflow.comapt.v1 as tf
+import tensorflow.compat.v1 as tf
 from tensorflow.keras.applications.vgg16 import VGG16, preprocess_input
 from tensorflow.keras.preprocessing.image import load_img, img_to_array
 from tensorflow.keras.preprocessing.text import Tokenizer
